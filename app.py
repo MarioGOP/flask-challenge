@@ -36,6 +36,4 @@ def get_diagram():
     pressure = request.args.get('pressure', default=10, type=float)
     specific_volume_liquid = (((pressure - 0.05)/4061.22)+0.00105) 
     specific_volume_vapor = (((pressure-10)/-0.3317)+0.0035)
-    specific_volume_liquid = "{:.4f}".format(specific_volume_liquid)
-    specific_volume_vapor = "{:.4f}".format(specific_volume_vapor)
     return jsonify({"specific_volume_liquid": specific_volume_liquid, "specific_volume_vapor": specific_volume_vapor}), 200
